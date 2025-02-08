@@ -1,0 +1,82 @@
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background: #0f0f0f;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Wrapper untuk logo dan teks */
+#background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Logo dengan ukuran responsif */
+.logo {
+    width: 40vw;
+    max-width: 500px;
+    height: 40vw;
+    max-height: 500px;
+    background-image: url('b.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+/* Teks dengan animasi */
+.nama {
+    font-weight: bold;
+    color: white;
+    font-size: 8vw;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 20px; /* Jarak dari logo */
+
+    /* Animasi teks */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+/* Efek fade-in dan scale-up */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efek tambahan: Hover pada teks */
+.nama:hover {
+    color: #ffcc00;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Canvas untuk efek tambahan */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
